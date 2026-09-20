@@ -1,0 +1,55 @@
+{
+  "name": "@gptproto-ai/mcp",
+  "version": "0.1.0",
+  "description": "Open-source MCP server for GPTProto model discovery, live pricing, native API calls, and asynchronous tasks.",
+  "license": "MIT",
+  "keywords": [
+    "gptproto",
+    "mcp",
+    "model-context-protocol",
+    "ai",
+    "image-generation",
+    "video-generation"
+  ],
+  "type": "module",
+  "bin": {
+    "gptproto-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "npm run build && node test/smoke.mjs",
+    "prepack": "npm run build",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "homepage": "https://github.com/gptproto-ai/gptproto-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gptproto-ai/gptproto-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gptproto-ai/gptproto-mcp/issues"
+  }
+}
