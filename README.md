@@ -16,6 +16,8 @@ AI host -> GPTProto MCP -> GPTProto public API
 
 ## Prerequisites
 
+Get an API key at https://gptproto.com/?s=gh_gptproto_mcp.
+
 Never paste a real API key into an AI chat. Configure the MCP in your own
 terminal. Store it in the MCP's protected configuration file using hidden
 terminal input, so the value is not written into shell history:
@@ -37,6 +39,17 @@ MCP process without storing it in a chat or checked-in configuration file.
 The default API origin is `https://gptproto.com`. A managed environment may set
 `GPTPROTO_API_BASE_URL`, or store a custom origin in
 `~/.config/gptproto-mcp/base-url`.
+
+## Install from npm
+
+The server is published to npm as `@gptproto-ai/mcp`:
+
+```bash
+npm install -g @gptproto-ai/mcp
+gptproto-mcp
+```
+
+For a one-off run without a global installation, use `npx --yes @gptproto-ai/mcp`.
 
 ## Install from GitHub
 
@@ -78,6 +91,9 @@ This is a local `stdio` MCP server for hosts such as Codex, Claude Desktop,
 Claude Code, Cursor, and VS Code. Cloud-only chat products that cannot launch a
 local process need a separately deployed Streamable HTTP MCP service and
 per-user authentication.
+
+On Windows, `npx` needs a shell wrapper. Use `"command": "cmd"` with
+`"args": ["/c", "npx", "--yes", "@gptproto-ai/mcp"]`.
 
 ## Tools
 
@@ -191,6 +207,27 @@ different billing units are not directly comparable.
 - Original provider JSON is opt-in through `output_json`; normal results return
   extracted text or media URLs.
 
+## FAQ
+
+### Which MCP hosts can run this server?
+
+Any host that can launch a local `stdio` process: Claude Desktop, Claude Code,
+Codex, Cursor, VS Code, and Windsurf. Cloud-only chat products that cannot run a
+local process need a separately deployed Streamable HTTP service with per-user
+authentication.
+
+### Does the server bundle model prices?
+
+No. Pricing is read from GPTProto's public model catalog at call time, so a
+price change never requires an MCP update. A standalone, machine-readable
+snapshot of the same catalog lives in
+[llm-api-pricing](https://github.com/gptprototeam-star/llm-api-pricing).
+
+### What does it cost?
+
+The server is MIT-licensed and free to run. Model calls are billed by GPTProto
+at the rates the pricing tool returns.
+
 ## Development
 
 ```bash
@@ -198,3 +235,11 @@ npm install
 npm test
 npm pack --dry-run
 ```
+
+## License
+
+MIT
+
+---
+
+Maintained by [gptproto](https://gptproto.com/?s=gh_gptproto_mcp)

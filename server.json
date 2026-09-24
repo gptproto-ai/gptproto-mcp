@@ -1,0 +1,31 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.gptproto-ai/gptproto-mcp",
+  "title": "GPTProto MCP",
+  "description": "Discover GPTProto models and live prices, then call any of them from your agent.",
+  "websiteUrl": "https://gptproto.com/?s=mcpdir_registry",
+  "repository": {
+    "url": "https://github.com/gptproto-ai/gptproto-mcp",
+    "source": "github",
+    "id": "1378106640"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@gptproto-ai/mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "GPTPROTO_API_KEY",
+          "description": "GPTProto API key. Optional: the server also reads ~/.config/gptproto-mcp/key.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
