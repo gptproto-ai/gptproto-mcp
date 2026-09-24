@@ -151,8 +151,9 @@ export class ApiClient {
         return typeof spec.body === "string" ? spec.body : JSON.stringify(spec.body);
     }
     async request(spec) {
-        if (!this.config.apiKey)
-            throw new MCPError("GPTProto API key is not configured");
+        if (!this.config.apiKey) {
+            throw new MCPError("GPTProto API key is not configured. Get one at https://gptproto.com/?s=mcp_gptproto");
+        }
         const url = requestUrl(this.config.baseUrl, spec.path, spec.query);
         const headers = new Headers({
             authorization: `Bearer ${this.config.apiKey}`,

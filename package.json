@@ -2,12 +2,17 @@
   "name": "@gptproto-ai/mcp",
   "version": "0.1.0",
   "description": "Open-source MCP server for GPTProto model discovery, live pricing, native API calls, and asynchronous tasks.",
+  "mcpName": "io.github.gptproto-ai/gptproto-mcp",
   "license": "MIT",
   "keywords": [
     "gptproto",
     "mcp",
     "model-context-protocol",
     "ai",
+    "llm",
+    "llm-api",
+    "pricing",
+    "openai-compatible",
     "image-generation",
     "video-generation"
   ],
@@ -44,7 +49,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "homepage": "https://github.com/gptproto-ai/gptproto-mcp#readme",
+  "homepage": "https://gptproto.com/?s=gh_gptproto_mcp",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gptproto-ai/gptproto-mcp.git"
